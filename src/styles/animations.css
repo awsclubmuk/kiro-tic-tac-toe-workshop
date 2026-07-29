@@ -1,0 +1,179 @@
+/**
+ * Spider-Man Tic-Tac-Toe Animations
+ * Task 10.1: CSS animations from design specification
+ * Task 10.4: Visual feedback animations for user actions
+ */
+
+/* Web Glow Animation */
+@keyframes web-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(220, 20, 60, 1);
+    }
+}
+
+/* Winning Line Animation */
+@keyframes winner-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Board Entry Animation */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Task 10.4: Visual Feedback Animations ── */
+
+/* Success ripple: brief green flash on a valid move cell */
+@keyframes cell-success-flash {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8);
+        background-color: rgba(34, 197, 94, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+        background-color: rgba(34, 197, 94, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        background-color: transparent;
+    }
+}
+
+/* Error shake: brief horizontal shake for invalid move feedback */
+@keyframes error-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+/* Error toast slide-in from top */
+@keyframes toast-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Error toast fade-out */
+@keyframes toast-fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.97);
+    }
+}
+
+/* Turn transition: player indicator slides in from the side */
+@keyframes turn-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* CPU thinking pulse */
+@keyframes cpu-thinking-pulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Utility animation classes */
+.web-animate {
+    animation: web-pulse 1.5s ease-in-out infinite;
+}
+
+.winner-animate {
+    animation: winner-pulse 0.6s ease-in-out 3;
+}
+
+.board-enter {
+    animation: slide-in 0.6s ease-out;
+}
+
+/* Task 10.4 utility classes */
+.cell-success-flash {
+    animation: cell-success-flash 0.6s ease-out forwards;
+}
+
+.cell-error-shake {
+    animation: error-shake 0.4s ease-in-out;
+}
+
+.toast-enter {
+    animation: toast-slide-in 0.25s ease-out forwards;
+}
+
+.toast-exit {
+    animation: toast-fade-out 0.3s ease-in forwards;
+}
+
+.turn-transition {
+    animation: turn-slide-in 0.3s ease-out forwards;
+}
+
+.cpu-thinking-text {
+    animation: cpu-thinking-pulse 1.2s ease-in-out infinite;
+}

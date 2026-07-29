@@ -1,0 +1,109 @@
+@import './animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles — transitions only on interactive elements */
+button,
+a,
+input,
+select,
+textarea,
+.game-cell,
+[role='button'] {
+  @apply transition-colors transition-transform transition-shadow duration-200 ease-out;
+}
+
+body {
+  @apply bg-spiderman-dark text-white antialiased;
+  font-family: 'Exo 2', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: Bangers, cursive;
+  letter-spacing: 0.04em;
+}
+
+.font-body {
+  font-family: 'Exo 2', system-ui, sans-serif;
+}
+
+/* Web Pattern Background */
+.web-background {
+  @apply bg-spiderman-dark bg-web-pattern;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-spiderman-red to-spiderman-red-soft text-white px-6 py-3 rounded-md
+    font-bold tracking-wide
+    hover:shadow-web-lg hover:brightness-110
+    active:scale-[0.98]
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-spiderman-web;
+  font-family: 'Exo 2', system-ui, sans-serif;
+}
+
+.btn-secondary {
+  @apply bg-spiderman-navy-mid/80 text-spiderman-web border border-spiderman-red/70 px-6 py-3 rounded-md
+    font-semibold tracking-wide
+    hover:bg-spiderman-blue hover:border-spiderman-red
+    active:scale-[0.98]
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-spiderman-red;
+  font-family: 'Exo 2', system-ui, sans-serif;
+}
+
+/* Cell Styles */
+.game-cell {
+  @apply bg-gradient-to-br from-spiderman-dark to-spiderman-navy-mid
+    border border-spiderman-red/50 rounded-md
+    cursor-pointer
+    flex items-center justify-center font-bold
+    hover:border-spiderman-red hover:shadow-web hover:scale-[1.03]
+    active:scale-95;
+  width: var(--cell-size, clamp(2.5rem, 10vw, 4rem));
+  height: var(--cell-size, clamp(2.5rem, 10vw, 4rem));
+  min-width: 44px;
+  min-height: 44px;
+  font-size: calc(var(--cell-size, 2.5rem) * 0.5);
+}
+
+.game-cell:disabled {
+  @apply cursor-not-allowed opacity-90 hover:scale-100 hover:shadow-none;
+}
+
+/* Player Symbol Styles — glow reserved for occupied cells */
+.symbol-player1 {
+  @apply text-spiderman-red;
+  filter: drop-shadow(0 0 6px rgba(220, 20, 60, 0.55));
+}
+
+.symbol-player2 {
+  @apply text-spiderman-web;
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.45));
+}
+
+/* Responsive Grid helpers */
+.game-board-3x3 {
+  @apply grid grid-cols-3 gap-2;
+}
+
+.game-board-4x4 {
+  @apply grid grid-cols-4 gap-2;
+}
+
+.game-board-5x5 {
+  @apply grid grid-cols-5 gap-2;
+}
+
+.glow-red {
+  @apply shadow-web;
+}
+
+.glow-red-lg {
+  @apply shadow-web-lg;
+}

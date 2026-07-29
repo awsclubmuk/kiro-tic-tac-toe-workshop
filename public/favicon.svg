@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Spider-Man Tic-Tac-Toe">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1a0a12"/>
+      <stop offset="100%" stop-color="#070B12"/>
+    </radialGradient>
+  </defs>
+  <!-- Rounded tile -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#DC143C" stroke-width="3"/>
+  <!-- Web -->
+  <g stroke="#DC143C" stroke-width="1.4" fill="none" opacity="0.55" stroke-linecap="round">
+    <line x1="32" y1="10" x2="32" y2="54"/>
+    <line x1="12" y1="18" x2="52" y2="46"/>
+    <line x1="52" y1="18" x2="12" y2="46"/>
+    <line x1="10" y1="32" x2="54" y2="32"/>
+    <circle cx="32" cy="32" r="8"/>
+    <circle cx="32" cy="32" r="16"/>
+  </g>
+  <!-- Spider body -->
+  <g fill="#DC143C">
+    <ellipse cx="32" cy="28" rx="6" ry="7.5"/>
+    <ellipse cx="32" cy="38" rx="4.5" ry="5.5"/>
+  </g>
+  <!-- Legs -->
+  <g stroke="#DC143C" stroke-width="2.2" fill="none" stroke-linecap="round">
+    <path d="M27 26 Q18 20 12 14"/>
+    <path d="M37 26 Q46 20 52 14"/>
+    <path d="M26 30 Q16 30 10 28"/>
+    <path d="M38 30 Q48 30 54 28"/>
+    <path d="M26 35 Q17 40 12 46"/>
+    <path d="M38 35 Q47 40 52 46"/>
+    <path d="M28 39 Q22 46 16 52"/>
+    <path d="M36 39 Q42 46 48 52"/>
+  </g>
+  <!-- Gold accent (web tip) -->
+  <circle cx="32" cy="32" r="2.2" fill="#FFD700"/>
+</svg>
